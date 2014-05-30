@@ -1,4 +1,4 @@
-module PYTH-SYNTAX
+module PYTH
        syntax Id ::= Int
        	      	     | Bool
 		     | AExp
