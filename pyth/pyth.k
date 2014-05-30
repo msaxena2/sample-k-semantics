@@ -14,7 +14,10 @@ module PYTH
 		       | (BExp)	   		[bracket]
 		       
        syntax Stmt ::= Id "=" AExp		[strict(2)]
-       	      	       | Stmt Stmt
+       	      	       | Stmt ";"
+		       
+       syntax Pgm ::= Stmt Stmt			[left]
 
-        		       	      		         
+       syntax KResult ::= Int | Bool
+      		       	      		         
 endmodule
