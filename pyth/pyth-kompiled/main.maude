@@ -1,8 +1,0 @@
-load "/Users/Manasvi/Documents/k_framework/k/lib/maude/lib/k-prelude"
-load "base.maude"
-load "builtins.maude"
-mod PYTH is 
-  including PYTH-BASE .
-  including PYTH-BUILTINS .
-eq mainModule = 'PYTH .
-endm
