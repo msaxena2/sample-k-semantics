@@ -6,9 +6,10 @@ module PYTH-SYNTAX
 		    
        syntax AExp ::= Int
        	      	       | AExp "*" AExp		[strict, left]
-		       | AExp "/" AExp		[strict, left]		         
+		       | AExp "/" AExp		[strict, left]		        
 		       > AExp "+" AExp		[strict, left]
 		       | AExp "-" AExp		[strict, left]
+		       | (AExp)	  		[bracket]
 
        syntax BExp ::= Bool
        	      	       | "!" BExp		[strict]
