@@ -1,1 +1,5 @@
-Is there a way of testing with files, instead of coding the grammar straight into the test as in the case of the 
+Is there a way of testing with files, instead of coding the grammar straight into the test as in the case of the current test.
+Is there a way of running the main with arguments using the normal arguments
+$PGM error
+Does krun receive the kast and then applies rules to the kast?
+
