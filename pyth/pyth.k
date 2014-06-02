@@ -22,10 +22,8 @@ module PYTH
        syntax KResult ::= Int | Bool
        
        syntax Block ::= "{""}"
-       	      	    	| "{" Block "}"
-       configuration <T> 
-       		     	 <k> $PGM </k>
-			 <state> .Map </state>
-		     </T>
-      		       	      		         
+       	      	    	| "{" Block "}"      		       	      		         
+
+      configuration
+		<k> $PGM:Pgm </k>
 endmodule
