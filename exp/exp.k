@@ -18,4 +18,7 @@ module EXP
 			<in stream="stdin"> .List </in>
       			<out stream="stdout"> .List </out>
     		</streams>
+      rule I1:Int + I2:Int => I1 +Int I2
+      rule I1:Int * I2:Int => I1 *Int I2
+      rule I1:Int / I2:Int => I1 /Int I2 requires I2 =/=Int 0 
 endmodule
