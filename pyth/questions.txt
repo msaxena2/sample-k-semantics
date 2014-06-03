@@ -7,3 +7,14 @@ Is there a way to debug the program in an Ide?
 
 Issues
 Created p2-kompiled even when compilation failed
+
+
+
+
+Questions regarding the framework:
+1) Pg 7 the K-primer heating and cooling rules. The meaning of hole
+2)
+
+Questions specific to KRun
+1) Very general overview of how KRun works
+2) Does it get the kast?
