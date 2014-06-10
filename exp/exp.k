@@ -9,9 +9,9 @@ module EXP-SYNTAX
 		      | Id 
 		      | Id "+" Id		[strict]
 		      | Id "/" Id 		[strict]
-		      | "print" "(" Id ")"	[strict]
+		      | "print" "(" Id ")"	[strict]	
+		      
 	syntax Stmt ::= Id "=" Exp ";"		[strict(2)]
-	       	    	| Exp";"
 	syntax Block ::= Stmt Stmt		[seqstrict]
 
 endmodule
@@ -31,6 +31,8 @@ module EXP
       rule I1:Int + I2:Int => I1 +Int I2
       rule I1:Int * I2:Int => I1 *Int I2
       rule I1:Int / I2:Int => I1 /Int I2 requires I2 =/=Int 0
+      // Identifier rule
+      // go here
       // print rules
       rule <k> print(I:Int) => I ... </k>
       	   <out> ... .=> ListItem(I) </out>
@@ -38,9 +40,8 @@ module EXP
       rule <k> read => I:Int ...</k>
       	    <in> ListItem(I) => . ... </in>
       // variable declaration rules
-      rule <k> X = I:Int; =>  ... </k>
+      rule <k> X = I:Int; => . ... </k>p
       	   <env> ... X |-> (_ => I) ... </env>  
       // lookup rule
-      rule <k> X  => . ... </k>
-      	   <env> ... X |-> I ... </env>
+      rule <k> 
 endmodule
