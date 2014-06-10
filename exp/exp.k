@@ -6,14 +6,9 @@ module EXP-SYNTAX
 		      | "read"		
 		      | "print" "(" Exp ")"	[strict]
 		      | "(" Exp ")"		[bracket]
-		      | Id 
-		      | Id "+" Id		[strict]
-		      | Id "/" Id 		[strict]
-		      | "print" "(" Id ")"	[strict]	
-		      
-	syntax Stmt ::= Id "=" Exp ";"		[strict(2)]
-	syntax Block ::= Stmt Stmt		[seqstrict]
 
+	syntax Block ::= Stmt Block		[seqstrict]
+	       	     	 | Stmt
 endmodule
 
 module EXP
@@ -39,9 +34,5 @@ module EXP
       // read rules
       rule <k> read => I:Int ...</k>
       	    <in> ListItem(I) => . ... </in>
-      // variable declaration rules
-      rule <k> X = I:Int; => . ... </k>p
-      	   <env> ... X |-> (_ => I) ... </env>  
-      // lookup rule
-      rule <k> 
+
 endmodule
