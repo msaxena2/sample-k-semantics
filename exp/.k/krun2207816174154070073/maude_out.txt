@@ -1,0 +1,12 @@
+Maude> rewrites: 0 in 0ms cpu (0ms real) (0 rewrites/second)
+result #Int: setCounter(0)
+rewrites: 30 in 0ms cpu (0ms real) (272727 rewrites/second)
+result BagItem: 
+< generatedTop > 
+ < k > # 5(.KList) </ k > 
+ < streams > 
+  < in > ListItem(#buffer(# ""(.KList))) ListItem('#istream`(_`)(# 0(.KList))) </ in > 
+  < out > ListItem('#ostream`(_`)(# 1(.KList))) ListItem(#buffer(# ""(.KList))) </ out > </ streams > </ generatedTop >
+rewrites: 6 in 0ms cpu (0ms real) (315789 rewrites/second)
+result #NzNat: 1
+Maude> Bye.

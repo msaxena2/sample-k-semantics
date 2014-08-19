@@ -1,0 +1,21 @@
+Is there a way of testing with files, instead of coding the grammar straight into the test as in the case of the current test.
+Is there a way of running the main with arguments using the normal arguments
+$PGM error
+Does krun receive the kast and then applies rules to the kast?
+Is there a way to specify the output directory for the kompiled?
+Is there a way to debug the program in an Ide?
+
+Issues
+Created p2-kompiled even when compilation failed
+
+
+
+
+Questions regarding the framework:
+1) Pg 7 the K-primer heating and cooling rules. The meaning of hole
+2)
+
+Questions specific to KRun
+1) Very general overview of how KRun works
+2) Does it get the kast?
+3) What does the K class do?

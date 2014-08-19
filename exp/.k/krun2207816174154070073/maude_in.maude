@@ -1,0 +1,5 @@
+set show command off .
+red setCounter(0) .
+erewrite <_>_</_>(generatedTop, (<_>_</_>(k, _`(_`)('_+_, _`,`,_(_`(_`)(#_(2), .KList), _`(_`)(#_(3), .KList))), k)) (<_>_</_>(streams, (<_>_</_>(in, __(ListItem(_`(_`)(#buffer, _`(_`)(#_(""), .KList))), .List, ListItem(_`(_`)('#istream`(_`), _`(_`)(#_(0), .KList)))), in)) (<_>_</_>(out, __(ListItem(_`(_`)('#ostream`(_`), _`(_`)(#_(1), .KList))), .List, ListItem(_`(_`)(#buffer, _`(_`)(#_(""), .KList)))), out)) , streams)) , generatedTop) .
+
+red counter .

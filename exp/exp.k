@@ -6,7 +6,7 @@ module EXP-SYNTAX
 		      | "read"		
 		      | "print" "(" Exp ")"	[strict]
 		      | "(" Exp ")"		[bracket]
-
+        syntax Stmt ::= Exp ";"			[strict]
 	syntax Block ::= Stmt Block		[seqstrict]
 	       	     	 | Stmt
 endmodule
@@ -29,7 +29,7 @@ module EXP
       // Identifier rule
       // go here
       // print rules
-      rule <k> print(I:Int) => I ... </k>
+      rule <k> print(I:Int) => ... </k>
       	   <out> ... .=> ListItem(I) </out>
       // read rules
       rule <k> read => I:Int ...</k>

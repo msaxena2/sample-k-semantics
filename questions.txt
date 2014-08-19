@@ -1,0 +1,11 @@
+Function Calls:
+1) Run Process
+2) Symbolic backend?
+3) obtainKRun(context)
+4) 
+
+
+General Questions:
+1) What is the state and the context?
+2) What is a term? (extends ASTNode and implements Comparable)
+3)

@@ -1,0 +1,4 @@
+set show command off .
+red setCounter(0) .
+debug red <_>_</_>(generatedTop, <_>_</_>(T, (<_>_</_>(k, _`(_`)('int_;_, _`,`,_(_`(_`)('_`,_, _`,`,_(_`(_`)(#token("Id", "a"), .KList), _`(_`)('.List`{"`,"`}, .KList))), _`(_`)('_=_;, _`,`,_(_`(_`)(#token("Id", "a"), .KList), _`(_`)(#_(100), .KList))))), k)) (<_>_</_>(state, .Map, state)) , T), generatedTop) .
+step .

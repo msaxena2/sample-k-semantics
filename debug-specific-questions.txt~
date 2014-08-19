@@ -1,0 +1,67 @@
+The flow of the krun debugger program is as follows:
+It Gets as Parameters: KRunResult State (Assuming that this is what krun returns after a run and that it basically contains metadata), context (which is vague) and the Kast.
+
+Makes a console reader object
+
+Makes a RunProcess object.
+
+Obtains KRun using context. (KRun is the interface, which is extended by maudeKRun, which is called by the debugger using the context. Assume that MaudeKRun calls the maude rewrite engine with the current context?)
+
+Does the following while state == NULL i.e. assuming that state tells the debugger when to stop.
+
+Makes a KRunDebugger object (KRunDebugger is an interface)
+
+If existing state (i.e KRun has never been run before), it does the following:
+   - Makes a call to makeConfiguration using the kast, context, RunProcess object and K.term. The call returns a Term object (Vague assume that it's a computation in the AST).
+   - Important Questions what does makeConfiguration do? what exactly is a term?
+   - Then a call made to KRun's Debug method using the term. This call return a KRunApiDebugger object.
+   - KRunApiDebugger gets context, term and KRun object. It calls importTblRule using K.compiled_def. 
+   - CollectVariablesVisitor called using context
+
+
+Main Question:
+1) Confirmation that Kast is the K - Abstract Syntax Tree
+2) What is Context?
+3) What is a KRunResult object.
+4) Given a kast, how do we perform one step of the KRun.
+5) What is the term?
+6) ObtainKRun is a private method in KRun's main(), what does it do, alternatives?? 
+7) What exactly is a term?
+8) MakeConfiguration is called?
+9) Static Class K?
+
+
+Some Notes regarding various classes:
+RunProcess - 
+1) Has RunParserOrDie (probably takes in a pgm and return the Kast by parsing it).
+2) Also has a runParser method, that probably takes in a program and returns the KAST.
+ 
+MakeConfiguration (important)_- 
+1) return a term -  
+2) Takes as parameters - Kast, hasTerm, context
+3) Creates a HashMap between Strings and Terms
+4) According to the debugger, it return the initial specified configuration with the parsed program in the kcell.
+Assumption - 
+Given an Kast, return the configuration in the initial state. 
+
+ObtainKRun
+1) Return a Krun object with the specified backend.
+2) 
+
+KRun Specific Questions
+1) According to the commenting in the interface:
+   1) Execute a term as much as possible such that further rewriting is not possible.
+   2) Brings back the same question. What is a term?
+2) 
+
+
+KRun Debugger Specific Quesetions:
+1) It takes as parameters a configuration, which we got from makeConfiguration, and then calls KRunApiDebugger.
+
+KRunApiDebugger - 
+1) Performs an ImportTblRule (No idea what this does. Assuming that it imports a table containing all the rules from the semantics module). Confirm!!!
+2) Makes an ASTNode object with name pattern. Calls method parsePattern. (What is a pattern)? It has the generated top variable.
+3) Makes a CollectVariablesVisitor object using the context
+4) Calls visitNode on the object
+5) Static object RuleCompilerSteps ??
+6) calls defaultPatter.compile()

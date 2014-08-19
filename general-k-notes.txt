@@ -1,0 +1,2 @@
+Some General Notes regarding the K framework
+1) 

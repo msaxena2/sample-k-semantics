@@ -1,0 +1,17 @@
+Maude> rewrites: 0 in 0ms cpu (0ms real) (0 rewrites/second)
+result #Int: setCounter(0)
+*********** trial #1
+ceq 
+< T > 
+ < k > 'int_;_('_`,_(X:KItem,,Xs:KItem),,GeneratedFreshVar0:K) </ k > 
+ < state > Rho:Map </ state > </ T > = 
+< T > 
+ < k > 'int_;_(Xs:KItem,,GeneratedFreshVar0:K) </ k > 
+ < state > Rho:Map X:KItem |-> # 0(.KList) </ state > </ T > if '#andBool('notBool_(inSet(X:KItem,,Set2KLabel keys Rho:Map(.KList))),,isIds(Xs:KItem),,isId(X:KItem)) = # true(.KList) [metadata "filename=(/Users/manasvi/Documents/sample-k-semantics/imp/imp.k) location=(53,3,54,33) computational=()"] .
+X:KItem --> #token("Id", "a")(.KList)
+Xs:KItem --> '.List`{"`,"`}(.KList)
+GeneratedFreshVar0:K --> '_=_;(#token("Id", "a")(.KList),,# 100(.KList))
+Rho:Map --> .Map
+*********** solving condition fragment
+'#andBool('notBool_(inSet(X:KItem,,Set2KLabel keys Rho:Map(.KList))),,isIds(Xs:KItem),,isId(X:KItem)) = # true(.KList)
+Debug(1)> Bye.

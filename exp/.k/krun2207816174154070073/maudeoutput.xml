@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<maudeml>
+ <result total-rewrites="0" real-time-ms="0" cpu-time-ms="0" rewrites-per-second="0">
+  <term op="setCounter" sort="#Int">
+   <term op="0" sort="#Zero"/>
+  </term>
+ </result>
+ <result total-rewrites="30" real-time-ms="0" cpu-time-ms="0" rewrites-per-second="272727">
+  <term op="&lt;_>_&lt;/_>" sort="BagItem">
+   <term op="generatedTop" sort="CellLabel"/>
+   <term op="__" sort="NeBag">
+    <term op="&lt;_>_&lt;/_>" sort="BagItem">
+     <term op="k" sort="CellLabel"/>
+     <term op="_`(_`)" sort="KItem">
+      <term op="#_" sort="KLabel">
+       <term op="sNat_" number="5" sort="#NzNat">
+        <term op="0" sort="#Zero"/>
+       </term>
+      </term>
+      <term op=".KList" sort="KList"/>
+     </term>
+     <term op="k" sort="CellLabel"/>
+    </term>
+    <term op="&lt;_>_&lt;/_>" sort="BagItem">
+     <term op="streams" sort="CellLabel"/>
+     <term op="__" sort="NeBag">
+      <term op="&lt;_>_&lt;/_>" sort="BagItem">
+       <term op="in" sort="CellLabel"/>
+       <term op="__" sort="NeList">
+        <term op="ListItem" sort="ListItem">
+         <term op="_`(_`)" sort="KItem">
+          <term op="#buffer" sort="KLabel"/>
+          <term op="_`(_`)" sort="KItem">
+           <term op="#_" sort="KLabel">
+            <term op="&quot;&quot;" sort="#String"/>
+           </term>
+           <term op=".KList" sort="KList"/>
+          </term>
+         </term>
+        </term>
+        <term op="ListItem" sort="ListItem">
+         <term op="_`(_`)" sort="KItem">
+          <term op="'#istream`(_`)" sort="KLabel"/>
+          <term op="_`(_`)" sort="KItem">
+           <term op="#_" sort="KLabel">
+            <term op="0" sort="#Zero"/>
+           </term>
+           <term op=".KList" sort="KList"/>
+          </term>
+         </term>
+        </term>
+       </term>
+       <term op="in" sort="CellLabel"/>
+      </term>
+      <term op="&lt;_>_&lt;/_>" sort="BagItem">
+       <term op="out" sort="CellLabel"/>
+       <term op="__" sort="NeList">
+        <term op="ListItem" sort="ListItem">
+         <term op="_`(_`)" sort="KItem">
+          <term op="'#ostream`(_`)" sort="KLabel"/>
+          <term op="_`(_`)" sort="KItem">
+           <term op="#_" sort="KLabel">
+            <term op="sNat_" number="1" sort="#NzNat">
+             <term op="0" sort="#Zero"/>
+            </term>
+           </term>
+           <term op=".KList" sort="KList"/>
+          </term>
+         </term>
+        </term>
+        <term op="ListItem" sort="ListItem">
+         <term op="_`(_`)" sort="KItem">
+          <term op="#buffer" sort="KLabel"/>
+          <term op="_`(_`)" sort="KItem">
+           <term op="#_" sort="KLabel">
+            <term op="&quot;&quot;" sort="#String"/>
+           </term>
+           <term op=".KList" sort="KList"/>
+          </term>
+         </term>
+        </term>
+       </term>
+       <term op="out" sort="CellLabel"/>
+      </term>
+     </term>
+     <term op="streams" sort="CellLabel"/>
+    </term>
+   </term>
+   <term op="generatedTop" sort="CellLabel"/>
+  </term>
+ </result>
+ <result total-rewrites="6" real-time-ms="0" cpu-time-ms="0" rewrites-per-second="315789">
+  <term op="sNat_" number="1" sort="#NzNat">
+   <term op="0" sort="#Zero"/>
+  </term>
+ </result>
+</maudeml>
