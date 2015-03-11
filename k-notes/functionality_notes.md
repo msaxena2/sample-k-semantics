@@ -6,3 +6,19 @@
 
 * It's understandable that the debugger should allow for multiple instances, each supporting a different frontend. Hence, an api, or something like a debugger api should be designed. Design decision should be made keeping in mind the fact that the api should support GUIs.
 
+* The debugger will be dealing entirely with KORE classes, and it's the backend used will have to be KORE compatible. 
+
+
+
+## Rewrite Engine API
+
+* Should provide support for KORE.
+
+* Match/Substitute should be supported. Given a rule, we should be able to call match substitute to get a rewrite.
+
+* The rewrite engine will not be responsible for maintaining the graph, that will be the responsibility of the debugger instance. 
+
+
+
+
+
