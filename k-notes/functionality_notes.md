@@ -22,3 +22,12 @@
 
 
 
+## Abstract vs Concrete Syntax
+
+* Think of abstract as only representing the essential features, and the concrete syntax as representing the entire syntax according to the grammar. 
+
+## KORE 
+
+* Minimal set of K, that can be accessed using an API to have functionality in K. Allows for skipping the entire user defined parser generation part. 
+
+
