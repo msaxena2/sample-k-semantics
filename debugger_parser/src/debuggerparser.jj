@@ -16,7 +16,7 @@ public class DebuggerParser {
         try
         {
               DebuggerParser parser = new DebuggerParser(System.in);
-              parser.command();
+              parser.commands();
         }
         catch(Exception e)
         {
@@ -32,7 +32,6 @@ SKIP :
     " "
     | "\t"
     | "\r"
-    | "\n"
 }
 
 
@@ -46,38 +45,50 @@ TOKEN: /*RESERVED TOKENS */
    |  <RESUME: "resume">
    |  <NUMBER: (["0" - "9"])+>
    |  <STRING : (["a" - "z", "A"-"Z", "0"-"9"])+ >
+   |  <NEWLINE : "\n" >
 }
 
-
-void name() :
+void paramteric_step() :
 {
 }
 {
-        <STEP>
-    |  <BACKSTEP>
-    |  <JUMPTO>
-    |  <QUIT>
-    |  <RESUME>
-    |  <CHECKPOINT>
+    <STEP> <NUMBER>
 }
 
-
-void args() :
+void parametric_backstep() :
 {
 }
 {
-      <STRING> args()
-    | <NUMBER> args()
-    | <EOF>
+    <BACKSTEP> <NUMBER>
 }
 
 void command() :
 {
+  int num = 1;
 }
 {
-    name() args() <EOF>
+      <STEP> (<NUMBER> {
+        num = token.image;
+      })?
+      { return new Step(num);
+    | paramteric_step()
+    | <BACKSTEP>
+    | parametric_backstep()
+    | <JUMPTO> <NUMBER>
+    | <CHECKPOINT> <NUMBER>
+    | <RESUME>
+    | <QUIT>
 }
 
 
+
+void commands() :
+{
+}
+{
+      command() <NEWLINE>
+    | command() <EOF>
+    | command() <NEWLINE> command()
+}
 
 

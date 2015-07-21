@@ -12,7 +12,7 @@ public class DebuggerParser implements DebuggerParserConstants {
         try
         {
               DebuggerParser parser = new DebuggerParser(System.in);
-              parser.command();
+              parser.commands();
         }
         catch(Exception e)
         {
@@ -20,32 +20,42 @@ public class DebuggerParser implements DebuggerParserConstants {
         }
     }
 
-  final public void name() throws ParseException {
-    trace_call("name");
+  final public void command() throws ParseException {
+    trace_call("command");
     try {
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case STEP:{
         jj_consume_token(STEP);
         break;
+        }{
+        jj_consume_token(STEP);
+        jj_consume_token(NUMBER);
+        break;
         }
       case BACKSTEP:{
         jj_consume_token(BACKSTEP);
         break;
+        }{
+        jj_consume_token(BACKSTEP);
+        jj_consume_token(NUMBER);
+        break;
         }
       case JUMPTO:{
         jj_consume_token(JUMPTO);
+        jj_consume_token(NUMBER);
         break;
         }
-      case QUIT:{
-        jj_consume_token(QUIT);
+      case CHECKPOINT:{
+        jj_consume_token(CHECKPOINT);
+        jj_consume_token(NUMBER);
         break;
         }
       case RESUME:{
         jj_consume_token(RESUME);
         break;
         }
-      case CHECKPOINT:{
-        jj_consume_token(CHECKPOINT);
+      case QUIT:{
+        jj_consume_token(QUIT);
         break;
         }
       default:
@@ -54,26 +64,31 @@ public class DebuggerParser implements DebuggerParserConstants {
         throw new ParseException();
       }
     } finally {
-      trace_return("name");
+      trace_return("command");
     }
   }
 
-  final public void args() throws ParseException {
-    trace_call("args");
+  final public void commands() throws ParseException {
+    trace_call("commands");
     try {
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
-      case STRING:{
-        jj_consume_token(STRING);
-        args();
+      case STEP:
+      case BACKSTEP:
+      case JUMPTO:
+      case QUIT:
+      case CHECKPOINT:
+      case RESUME:{
+        command();
+        jj_consume_token(NEWLINE);
         break;
-        }
-      case NUMBER:{
-        jj_consume_token(NUMBER);
-        args();
-        break;
-        }
-      case 0:{
+        }{
+        command();
         jj_consume_token(0);
+        break;
+        }{
+        command();
+        jj_consume_token(NEWLINE);
+        command();
         break;
         }
       default:
@@ -82,18 +97,7 @@ public class DebuggerParser implements DebuggerParserConstants {
         throw new ParseException();
       }
     } finally {
-      trace_return("args");
-    }
-  }
-
-  final public void command() throws ParseException {
-    trace_call("command");
-    try {
-      name();
-      args();
-      jj_consume_token(0);
-    } finally {
-      trace_return("command");
+      trace_return("commands");
     }
   }
 
@@ -112,7 +116,7 @@ public class DebuggerParser implements DebuggerParserConstants {
       jj_la1_init_0();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0x7e0,0x1801,};
+      jj_la1_0 = new int[] {0x3f0,0x3f0,};
    }
 
   /** Constructor with InputStream. */
