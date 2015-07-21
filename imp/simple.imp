@@ -1,4 +1,7 @@
-int a, b, c;
-a = 10;
-b = 12;
-c = a + b;
+int accumulator, limit;
+accumulator = 0;
+limit = 10;
+while(!(limit <= 0)) {
+	accumulator = accumulator + limit;
+	limit = limit + -1;
+}

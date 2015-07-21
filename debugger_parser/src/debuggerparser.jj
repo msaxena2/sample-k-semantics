@@ -1,0 +1,83 @@
+options {
+    STATIC = false ;
+}
+
+PARSER_BEGIN(DebuggerParser)
+
+import java.io.StringReader;
+import java.io.Reader;
+
+
+public class DebuggerParser {
+
+
+    public static void main(String args[])
+    {
+        try
+        {
+              DebuggerParser parser = new DebuggerParser(System.in);
+              parser.command();
+        }
+        catch(Exception e)
+        {
+              e.printStackTrace();
+        }
+    }
+}
+PARSER_END(DebuggerParser)
+
+/** Skip these characters, they are considered "white space" **/
+SKIP :
+{
+    " "
+    | "\t"
+    | "\r"
+    | "\n"
+}
+
+
+TOKEN: /*RESERVED TOKENS */
+{
+      <STEP: (["s", "S"])| "step" >
+   |  <BACKSTEP:  (["b", "B"])| "back-step">
+   |  <JUMPTO: (["j", "J"])| "jump-to">
+   |  <QUIT: "quit" | "abort" | "exit">
+   |  <CHECKPOINT: "set-chkpt">
+   |  <RESUME: "resume">
+   |  <NUMBER: (["0" - "9"])+>
+   |  <STRING : (["a" - "z", "A"-"Z", "0"-"9"])+ >
+}
+
+
+void name() :
+{
+}
+{
+        <STEP>
+    |  <BACKSTEP>
+    |  <JUMPTO>
+    |  <QUIT>
+    |  <RESUME>
+    |  <CHECKPOINT>
+}
+
+
+void args() :
+{
+}
+{
+      <STRING> args()
+    | <NUMBER> args()
+    | <EOF>
+}
+
+void command() :
+{
+}
+{
+    name() args() <EOF>
+}
+
+
+
+

@@ -1,11 +1,7 @@
 module LAMBDA
-	syntax Exp ::= Val
-					| Exp Exp           [left]
-					| "(" Exp ")" 		[bracket]
-					| "lambda" Val "." Exp
-
-	syntax Val ::= Id
-					
-
-
+  syntax Val ::= Id
+               | "lambda" Id "." Exp
+  syntax Exp ::= Val
+               | Exp Exp      [left]
+               | "(" Exp ")"  [bracket]
 endmodule

@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+rm *.java;
+rm *.class;
+javacc -DEBUG_PARSER debuggerparser.jj;
+javac *java;
+java DebuggerParser < test.txt;
