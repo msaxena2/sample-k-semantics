@@ -64,20 +64,9 @@ void parametric_backstep() :
 
 void command() :
 {
-  int num = 1;
 }
 {
-      <STEP> (<NUMBER> {
-        num = token.image;
-      })?
-      { return new Step(num);
-    | paramteric_step()
-    | <BACKSTEP>
-    | parametric_backstep()
-    | <JUMPTO> <NUMBER>
-    | <CHECKPOINT> <NUMBER>
-    | <RESUME>
-    | <QUIT>
+    "step" (<NUMBER>)*
 }
 
 
