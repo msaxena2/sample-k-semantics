@@ -71,3 +71,13 @@ Temporary Items
 *.aux
 *.tex
 *.pdf
+
+
+# Java
+*.java
+*.class
+*.iml
+*.xml
+*.idea
+
+
