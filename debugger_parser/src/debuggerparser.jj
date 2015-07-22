@@ -1,12 +1,9 @@
-options {
-    STATIC = false ;
-}
 
 PARSER_BEGIN(DebuggerParser)
 
 import java.io.StringReader;
 import java.io.Reader;
-
+import static Commands.Commands.*;
 
 public class DebuggerParser {
 
@@ -17,6 +14,7 @@ public class DebuggerParser {
         {
               DebuggerParser parser = new DebuggerParser(System.in);
               parser.command();
+              //command.run();
         }
         catch(Exception e)
         {
@@ -52,10 +50,11 @@ TOKEN: /*RESERVED TOKENS */
 
 void command() :
 {
+    int stepNum = 1;
 }
 {
-      <STEP> (<NUMBER>)?
-    | <BACKSTEP> (<NUMBER>)?
+      <STEP> (stepNum = parseNum())? {/*return new StepCommand(stepNum);*/}
+    | <BACKSTEP> (<NUMBER>)
     | <JUMPTO> <NUMBER>
     | <CHECKPOINT> <NUMBER>
     | <QUIT>
@@ -63,3 +62,11 @@ void command() :
 }
 
 
+int parseNum() throws NumberFormatException:
+{
+    Token t;
+}
+{
+    t = <NUMBER>
+    {return Integer.parseInt(t.image);}
+}
