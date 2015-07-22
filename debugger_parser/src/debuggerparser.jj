@@ -16,7 +16,7 @@ public class DebuggerParser {
         try
         {
               DebuggerParser parser = new DebuggerParser(System.in);
-              parser.commands();
+              parser.command();
         }
         catch(Exception e)
         {
@@ -32,6 +32,7 @@ SKIP :
     " "
     | "\t"
     | "\r"
+    | "\n"
 }
 
 
@@ -45,39 +46,20 @@ TOKEN: /*RESERVED TOKENS */
    |  <RESUME: "resume">
    |  <NUMBER: (["0" - "9"])+>
    |  <STRING : (["a" - "z", "A"-"Z", "0"-"9"])+ >
-   |  <NEWLINE : "\n" >
+
 }
 
-void paramteric_step() :
-{
-}
-{
-    <STEP> <NUMBER>
-}
-
-void parametric_backstep() :
-{
-}
-{
-    <BACKSTEP> <NUMBER>
-}
 
 void command() :
 {
 }
 {
-    "step" (<NUMBER>)*
-}
-
-
-
-void commands() :
-{
-}
-{
-      command() <NEWLINE>
-    | command() <EOF>
-    | command() <NEWLINE> command()
+      <STEP> (<NUMBER>)?
+    | <BACKSTEP> (<NUMBER>)?
+    | <JUMPTO> <NUMBER>
+    | <CHECKPOINT> <NUMBER>
+    | <QUIT>
+    | <RESUME>
 }
 
 
